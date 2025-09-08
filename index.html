@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Bootstrap Calculator</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.2.0/css/fork-awesome.min.css"
@@ -40,17 +40,18 @@
 
                 <div class="row text-center mt-3">
                     <div class="col">
-                        <H2 id="Hasil"></H2>
+                        <h2 id="Hasil"></h2>
                     </div>
                 </div>
 
-                <div class="row text-center" div class="col">
-                    <small class="text-primary">
-                        Name: Nuhanshafa
-                        NIM: 24/545410/SV/25677
-                        Class:A
-                    </small>
-                    <H2 id="Hasil"></H2>
+                <div class="row text-center">
+                    <div class="col">
+                        <small class="text-primary">
+                            Name: Nuhanshafa <br>
+                            NIM: 24/545410/SV/25677 <br>
+                            Class: A
+                        </small>
+                    </div>
                 </div>
 
             </div>
@@ -68,32 +69,27 @@
 
         //Fungsi untuk Penjumlahan
         function tambah() {
-            var hasil_tambah = parseFloat(Angka1.value) + parseFloat(Angka2.value);
-            console.log(hasil_tambah);
-            //Menampilkan hasil ke elemen dengan id "hasil"
-            document.getElementById('Hasil').innerHTML = "Hasil= " + hasil_tambah;
+            var hasil = parseFloat(Angka1.value) + parseFloat(Angka2.value);
+            document.getElementById('Hasil').innerHTML = "Hasil = " + hasil;
+        }
 
-            //fungsi untuk Pengurangan
-            function kurang() {
-                var hasil_bagi = parseFloat(Angka1.value) - parseFloat(Angka2.value);
-                console.log(hasil_bagi);
-                //Menampilkan hasil ke elemen dengan id "hasil"
-                document.getElementById('Hasil').innerHTML = "Hasil= " + hasil_bagi;
+        //Fungsi untuk Pengurangan
+        function kurang() {
+            var hasil = parseFloat(Angka1.value) - parseFloat(Angka2.value);
+            document.getElementById('Hasil').innerHTML = "Hasil = " + hasil;
+        }
 
-                //fungsi untuk Perkalian
-                function kali() {
-                    var hasil_kali = parseFloat(Angka1.value) * parseFloat(Angka2.value);
-                    console.log(hasil_kali);
-                    //Menampilkan hasil ke elemen dengan id "hasil"
-                    document.getElementById('Hasil').innerHTML = "Hasil= " + hasil_kali;
+        //Fungsi untuk Perkalian
+        function kali() {
+            var hasil = parseFloat(Angka1.value) * parseFloat(Angka2.value);
+            document.getElementById('Hasil').innerHTML = "Hasil = " + hasil;
+        }
 
-                    //fungsi untuk pembagian
-                    function bagi() {
-                        var hasil_bagi = parseFloat(Angka1.value) / parseFloat(Angka2.value);
-                        console.log(hasil_bagi);
-                        //Menampilkan hasil ke elemen dengan id "hasil"
-                        document.getElementById('Hasil').innerHTML = "Hasil= " + hasil_bagi;
-                    }
+        //Fungsi untuk Pembagian
+        function bagi() {
+            var hasil = parseFloat(Angka1.value) / parseFloat(Angka2.value);
+            document.getElementById('Hasil').innerHTML = "Hasil = " + hasil;
+        }
     </script>
 </body>
 
