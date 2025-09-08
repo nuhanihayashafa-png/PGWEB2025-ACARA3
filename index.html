@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.2.0/css/fork-awesome.min.css"
+        integrity="sha512-aupidr80M36SeyviA/hZ2uEPnvt2dTJfyjm9y6z1MgaV13TgzmDiFdsH3cvSNG27mRIj7gJ2gNeg1HeySJyE3Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="fa-solid fa-calculator"></i> Calculator</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="Angkapertama" class="form-label">Angka Pertama</label>
+                    <input type="number" class="form-control" id="Angkapertama" placeholder="Input angka pertama">
+                </div>
+
+                <div class="mb-3">
+                    <label for="Angkakedua" class="form-label">Angka Kedua</label>
+                    <input type="number" class="form-control" id="Angkakedua" placeholder="Input angka kedua">
+                </div>
+
+                <div class="row text-center">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary" onclick="tambah()">+</button>
+                        <button type="button" class="btn btn-danger" onclick="kurang()">-</button>
+                        <button type="button" class="btn btn-warning" onclick="kali()">*</button>
+                        <button type="button" class="btn btn-success" onclick="bagi()">/</button>
+                    </div>
+                </div>
+
+                <div class="row text-center mt-3">
+                    <div class="col">
+                        <H2 id="Hasil"></H2>
+                    </div>
+                </div>
+
+                <div class="row text-center" div class="col">
+                    <small class="text-primary">
+                        Name: Nuhanshafa
+                        NIM: 24/545410/SV/25677
+                        Class:A
+                    </small>
+                    <H2 id="Hasil"></H2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script>
+        //Mengambil nilai dari input
+        var Angka1 = document.getElementById('Angkapertama');
+        var Angka2 = document.getElementById('Angkakedua');
+
+        //Fungsi untuk Penjumlahan
+        function tambah() {
+            var hasil_tambah = parseFloat(Angka1.value) + parseFloat(Angka2.value);
+            console.log(hasil_tambah);
+            //Menampilkan hasil ke elemen dengan id "hasil"
+            document.getElementById('Hasil').innerHTML = "Hasil= " + hasil_tambah;
+
+            //fungsi untuk Pengurangan
+            function kurang() {
+                var hasil_bagi = parseFloat(Angka1.value) - parseFloat(Angka2.value);
+                console.log(hasil_bagi);
+                //Menampilkan hasil ke elemen dengan id "hasil"
+                document.getElementById('Hasil').innerHTML = "Hasil= " + hasil_bagi;
+
+                //fungsi untuk Perkalian
+                function kali() {
+                    var hasil_kali = parseFloat(Angka1.value) * parseFloat(Angka2.value);
+                    console.log(hasil_kali);
+                    //Menampilkan hasil ke elemen dengan id "hasil"
+                    document.getElementById('Hasil').innerHTML = "Hasil= " + hasil_kali;
+
+                    //fungsi untuk pembagian
+                    function bagi() {
+                        var hasil_bagi = parseFloat(Angka1.value) / parseFloat(Angka2.value);
+                        console.log(hasil_bagi);
+                        //Menampilkan hasil ke elemen dengan id "hasil"
+                        document.getElementById('Hasil').innerHTML = "Hasil= " + hasil_bagi;
+                    }
+    </script>
+</body>
+
+</html>

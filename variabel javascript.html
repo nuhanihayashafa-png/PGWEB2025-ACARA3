@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar JavaScript</title>
+</head>
+
+<body>
+
+    <h4 id="hasil_penjumlahan"></h4>
+    <h4 id="hasil_pengurangan"></h4>
+    <h4 id="hasil_perkalian"></h4>
+    <h4 id="hasil_pembagian"></h4>
+
+    <script>
+        var nama = "Nuhanshafa";
+        var umur = 20;
+        var penduduk = "Bumi";
+
+        console.log(nama);
+        console.log(umur);
+
+        // Menampilkan gabungan string
+        console.log("Nama: " + nama + ", Umur: " + umur + ", Penduduk: " + penduduk);
+
+        // Aritmatika +-*/
+        var a = 100;
+        var b = 123;
+
+        // Penjumlahan
+        var jumlah = a + b;
+        var hasiljumlah = "Penjumlahan dari " + a + " dan " + b + " adalah " + jumlah;
+        console.log(hasiljumlah);
+        document.getElementById("hasil_penjumlahan").innerHTML = hasiljumlah;
+
+        // Pengurangan
+        var kurang = a - b;
+        var hasilkurang = "Pengurangan dari " + a + " dan " + b + " adalah " + kurang;
+        console.log(hasilkurang);
+        document.getElementById("hasil_pengurangan").innerHTML = hasilkurang;
+
+        // Perkalian
+        var kali = a * b;
+        var hasilkali = "Perkalian dari " + a + " dan " + b + " adalah " + kali;
+        console.log(hasilkali);
+        document.getElementById("hasil_perkalian").innerHTML = hasilkali;
+
+        // Pembagian
+        var bagi = a / b;
+        var hasilbagi = "Pembagian dari " + a + " dan " + b + " adalah " + bagi;
+        console.log(hasilbagi);
+        document.getElementById("hasil_pembagian").innerHTML = hasilbagi;
+    </script>
+</body>
+
+</html>
