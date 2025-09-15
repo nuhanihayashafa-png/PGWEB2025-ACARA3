@@ -5,90 +5,129 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap Calculator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.2.0/css/fork-awesome.min.css"
-        integrity="sha512-aupidr80M36SeyviA/hZ2uEPnvt2dTJfyjm9y6z1MgaV13TgzmDiFdsH3cvSNG27mRIj7gJ2gNeg1HeySJyE3Q=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .card {
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: #4e73df;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .btn {
+            border-radius: 12px;
+            margin: 5px;
+            font-size: 1.2rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        #Hasil {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2e59d9;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        small {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container mt-3">
-        <div class="card">
-            <div class="card-header">
-                <h5><i class="fa-solid fa-calculator"></i> Calculator</h5>
-            </div>
-            <div class="card-body">
-                <div class="mb-3">
-                    <label for="Angkapertama" class="form-label">Angka Pertama</label>
-                    <input type="number" class="form-control" id="Angkapertama" placeholder="Input angka pertama">
-                </div>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fa-solid fa-calculator"></i> Si Calku
+                    </div>
 
-                <div class="mb-3">
-                    <label for="Angkakedua" class="form-label">Angka Kedua</label>
-                    <input type="number" class="form-control" id="Angkakedua" placeholder="Input angka kedua">
-                </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="Angkapertama" class="form-label">Angka Pertama</label>
+                            <input type="number" class="form-control" id="Angkapertama"
+                                placeholder="Masukkan angka pertama">
+                        </div>
 
-                <div class="row text-center">
-                    <div class="col">
-                        <button type="button" class="btn btn-primary" onclick="tambah()">+</button>
-                        <button type="button" class="btn btn-danger" onclick="kurang()">-</button>
-                        <button type="button" class="btn btn-warning" onclick="kali()">*</button>
-                        <button type="button" class="btn btn-success" onclick="bagi()">/</button>
+                        <div class="mb-3">
+                            <label for="Angkakedua" class="form-label">Angka Kedua</label>
+                            <input type="number" class="form-control" id="Angkakedua"
+                                placeholder="Masukkan angka kedua">
+                        </div>
+
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary" onclick="tambah()">+</button>
+                            <button type="button" class="btn btn-danger" onclick="kurang()">-</button>
+                            <button type="button" class="btn btn-warning text-white" onclick="kali()">*</button>
+                            <button type="button" class="btn btn-success" onclick="bagi()">/</button>
+                        </div>
+
+                        <div class="text-center">
+                            <h2 id="Hasil">Hasil = 0</h2>
+                        </div>
+
+                        <div class="text-center">
+                            <small>
+                                <b>Name:</b> Nuhanshafa <br>
+                                <b>NIM:</b> 24/545410/SV/25677 <br>
+                                <b>Class:</b> A
+                            </small>
+                        </div>
                     </div>
                 </div>
-
-                <div class="row text-center mt-3">
-                    <div class="col">
-                        <h2 id="Hasil"></h2>
-                    </div>
-                </div>
-
-                <div class="row text-center">
-                    <div class="col">
-                        <small class="text-primary">
-                            Name: Nuhanshafa <br>
-                            NIM: 24/545410/SV/25677 <br>
-                            Class: A
-                        </small>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-
     <script>
-        //Mengambil nilai dari input
         var Angka1 = document.getElementById('Angkapertama');
         var Angka2 = document.getElementById('Angkakedua');
+        var Hasil = document.getElementById('Hasil');
 
-        //Fungsi untuk Penjumlahan
         function tambah() {
             var hasil = parseFloat(Angka1.value) + parseFloat(Angka2.value);
-            document.getElementById('Hasil').innerHTML = "Hasil = " + hasil;
+            Hasil.innerHTML = "Hasil = " + hasil;
         }
 
-        //Fungsi untuk Pengurangan
         function kurang() {
             var hasil = parseFloat(Angka1.value) - parseFloat(Angka2.value);
-            document.getElementById('Hasil').innerHTML = "Hasil = " + hasil;
+            Hasil.innerHTML = "Hasil = " + hasil;
         }
 
-        //Fungsi untuk Perkalian
         function kali() {
             var hasil = parseFloat(Angka1.value) * parseFloat(Angka2.value);
-            document.getElementById('Hasil').innerHTML = "Hasil = " + hasil;
+            Hasil.innerHTML = "Hasil = " + hasil;
         }
 
-        //Fungsi untuk Pembagian
         function bagi() {
-            var hasil = parseFloat(Angka1.value) / parseFloat(Angka2.value);
-            document.getElementById('Hasil').innerHTML = "Hasil = " + hasil;
+            if (parseFloat(Angka2.value) === 0) {
+                Hasil.innerHTML = "Tidak bisa dibagi 0!";
+            } else {
+                var hasil = parseFloat(Angka1.value) / parseFloat(Angka2.value);
+                Hasil.innerHTML = "Hasil = " + hasil;
+            }
         }
     </script>
 </body>
